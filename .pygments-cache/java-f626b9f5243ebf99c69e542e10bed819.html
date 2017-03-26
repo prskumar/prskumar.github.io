@@ -1,6 +1,0 @@
-<div class="highlight"><pre><span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;/register&quot;</span><span class="o">,</span> <span class="n">method</span><span class="o">=</span><span class="n">POST</span><span class="o">)</span>
-<span class="kd">public</span> <span class="n">String</span> <span class="nf">processRegistration</span><span class="o">(</span><span class="n">Spitter</span> <span class="n">spitter</span><span class="o">)</span> <span class="o">{</span>
-	<span class="n">spitterRepository</span><span class="o">.</span><span class="na">save</span><span class="o">(</span><span class="n">spitter</span><span class="o">);</span>
-	<span class="k">return</span> <span class="s">&quot;redirect:/spitter/&quot;</span> <span class="o">+</span> <span class="n">spitter</span><span class="o">.</span><span class="na">getUsername</span><span class="o">();</span>
-<span class="o">}</span>
-</pre></div>

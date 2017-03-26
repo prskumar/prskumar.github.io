@@ -1,9 +1,0 @@
-<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookstoreServletContainerInitializer</span> <span class="kd">implements</span> <span class="n">ServletContainerInitializer</span> <span class="o">{</span>
-   <span class="nd">@Override</span>
-   <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onStartup</span><span class="o">(</span><span class="n">Set</span><span class="o">&lt;</span><span class="n">Class</span><span class="o">&lt;?&gt;&gt;</span> <span class="n">classes</span><span class="o">,</span> <span class="n">ServletContext</span> <span class="n">servletContext</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">ServletException</span> <span class="o">{</span>
-      <span class="n">ServletRegistration</span><span class="o">.</span><span class="na">Dynamic</span> <span class="n">registration</span> <span class="o">=</span> <span class="n">servletContext</span><span class="o">.</span><span class="na">addServlet</span><span class="o">(</span><span class="s">&quot;dispatcher&quot;</span><span class="o">,</span> <span class="n">DispatcherServlet</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-      <span class="n">registration</span><span class="o">.</span><span class="na">setLoadOnStartup</span><span class="o">(</span><span class="mi">1</span><span class="o">);</span>
-      <span class="n">registration</span><span class="o">.</span><span class="na">addMapping</span><span class="o">(</span><span class="s">&quot;/*&quot;</span><span class="o">);</span>
-   <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>

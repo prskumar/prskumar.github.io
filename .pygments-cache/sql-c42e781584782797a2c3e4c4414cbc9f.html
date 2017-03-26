@@ -1,2 +1,0 @@
-<div class="highlight"><pre><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">runners</span> <span class="k">WHERE</span> <span class="n">id</span> <span class="k">NOT</span> <span class="k">IN</span> <span class="p">(</span><span class="k">SELECT</span> <span class="n">winner_id</span> <span class="k">FROM</span> <span class="n">races</span> <span class="k">WHERE</span> <span class="n">winner_id</span> <span class="k">IS</span> <span class="k">NOT</span> <span class="k">null</span><span class="p">)</span>
-</pre></div>

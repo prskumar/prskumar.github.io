@@ -1,7 +1,0 @@
-<div class="highlight"><pre><span class="n">ObjectOutputStream</span> <span class="n">out</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ObjectOutputStream</span><span class="o">(...);</span> 
-<span class="n">MyObject</span> <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">MyObject</span><span class="o">();</span> <span class="c1">// must be Serializable </span>
-<span class="n">obj</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="mi">100</span><span class="o">);</span> 
-<span class="n">out</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span> <span class="c1">// &lt;--------saves object with state = 100 </span>
-<span class="n">obj</span><span class="o">.</span><span class="na">setState</span><span class="o">(</span><span class="mi">200</span><span class="o">);</span> 
-<span class="n">out</span><span class="o">.</span><span class="na">writeObject</span><span class="o">(</span><span class="n">obj</span><span class="o">);</span> <span class="c1">// &lt;--------does not save new object state </span>
-</pre></div>

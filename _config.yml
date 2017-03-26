@@ -2,10 +2,10 @@
 #      Main Configs       #
 # ----------------------- #
 
-url: http://fizalihsan.github.io
-title: KnowledgeShop
-subtitle: Learn & Share
-author: Mohamed Fizal Ihsan Mohamed
+url: http://prskumar.github.io
+title: Brain Dump
+subtitle: Learn and Dump
+author: Senthil Kumar Palanisamy
 lunr_search: false
 simple_search: https://www.google.com/search
 description:
@@ -73,13 +73,13 @@ sidebar: false
 # ----------------------- #
 
 # Github repositories
-github_user: fizalihsan
+github_user: prskumar
 github_repo_count: 0
 github_show_profile_link: true
 github_skip_forks: true
 
 # Twitter
-twitter_user: fizalihsan
+twitter_user: prskumar
 twitter_tweet_button: true
 
 # Google +1
@@ -104,7 +104,7 @@ disqus_short_name:
 disqus_show_comment_count: false
 
 # Google Analytics
-google_analytics_tracking_id: UA-58187831-1
+google_analytics_tracking_id: 
 
 # Facebook Like
 facebook_like: false

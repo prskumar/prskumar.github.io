@@ -1,9 +1,0 @@
-<div class="highlight"><pre><span class="c1">//Websphere EJB txn manager example</span>
-<span class="n">Class</span> <span class="n">txnClass</span> <span class="o">=</span> <span class="n">Class</span><span class="o">.</span><span class="na">forName</span><span class="o">(</span><span class="s">&quot;com.ibm.ejs.jts.jta.TransactionManagerFactory&quot;</span><span class="o">);</span> 
-
-<span class="n">TransactionManager</span> <span class="n">mgr</span> <span class="o">=</span> <span class="o">(</span><span class="n">TransactionManager</span><span class="o">)</span><span class="n">txnClass</span><span class="o">.</span><span class="na">getMethod</span><span class="o">(</span><span class="s">&quot;getTransactionManager&quot;</span><span class="o">,</span> <span class="kc">null</span><span class="o">)</span>
-          <span class="o">.</span><span class="na">invoke</span><span class="o">(</span><span class="kc">null</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
-
-<span class="c1">//Start the txn via txn manager</span>
-<span class="n">mgr</span><span class="o">.</span><span class="na">begin</span><span class="o">();</span>
-</pre></div>

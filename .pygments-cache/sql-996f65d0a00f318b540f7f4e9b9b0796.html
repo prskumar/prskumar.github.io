@@ -1,6 +1,0 @@
-<div class="highlight"><pre><span class="k">select</span> <span class="n">department_name</span><span class="p">,</span> <span class="n">city</span> <span class="k">from</span> <span class="n">departments</span>
-<span class="k">JOIN</span> <span class="n">locations</span> <span class="k">USING</span> <span class="p">(</span><span class="n">location_id</span><span class="p">);</span> <span class="c1">-- specify the same column name for both of the tables for the join</span>
-
-<span class="k">select</span> <span class="n">department_name</span><span class="p">,</span> <span class="n">city</span> <span class="k">from</span> <span class="n">departments</span> <span class="n">dept</span>
-<span class="k">join</span> <span class="n">locations</span> <span class="n">loc</span> <span class="k">on</span> <span class="p">(</span><span class="n">d</span><span class="p">.</span><span class="n">location_id</span> <span class="o">=</span> <span class="n">l</span><span class="p">.</span><span class="n">id</span><span class="p">);</span> <span class="c1">-- specify different column name for the tables for the join.</span>
-</pre></div>

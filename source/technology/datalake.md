@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Amazon AWS"
+title: "Data Lake"
 comments: true
 sharing: true
 footer: true
@@ -9,4 +9,3 @@ footer: true
 * list element with functor item
 {:toc}
 
-# AWS

@@ -1,9 +1,0 @@
-<div class="highlight"><pre><span class="kd">static</span> <span class="n">ThreadLocal</span> <span class="n">myWrapper</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ThreadLocal</span><span class="o">()</span> <span class="o">{</span>
-  <span class="n">NotThreadSafeObject</span> <span class="nf">initialValue</span><span class="o">()</span> <span class="o">{</span>
-    <span class="k">return</span> <span class="k">new</span> <span class="nf">NotThreadSafeObject</span><span class="o">();</span>
-  <span class="o">}</span>
-<span class="o">}</span>
-
-<span class="o">.</span> <span class="o">.</span> <span class="o">.</span> <span class="o">.</span> 
-<span class="n">myWrapper</span><span class="o">.</span><span class="na">get</span><span class="o">().</span><span class="na">someMethod</span><span class="o">()</span>
-</pre></div>

@@ -1,9 +1,0 @@
-<div class="highlight"><pre><span class="n">ManagerPurchasePower</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">ManagerPurchasePower</span><span class="o">();</span>
-<span class="n">VPPurchasePower</span> <span class="n">vp</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">VPPurchasePower</span><span class="o">();</span>
-<span class="n">CEOPurchasePower</span> <span class="n">ceo</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">CEOPurchasePower</span><span class="o">();</span>
-<span class="n">manager</span><span class="o">.</span><span class="na">setSuccessor</span><span class="o">(</span><span class="n">vp</span><span class="o">);</span>
-<span class="n">vp</span><span class="o">.</span><span class="na">setSuccessor</span><span class="o">(</span><span class="n">ceo</span><span class="o">);</span>
-
-<span class="n">manager</span><span class="o">.</span><span class="na">approve</span><span class="o">(</span><span class="n">request</span><span class="o">);</span> <span class="c1">// if manager is not authorized to approve the request, it will be delegated VP. </span>
- 
-</pre></div>

@@ -1,8 +1,0 @@
-<div class="highlight"><pre><span class="nd">@Test</span><span class="o">(</span><span class="n">expected</span> <span class="o">=</span> <span class="n">IOException</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
-    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">voidMethodCalls</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">IOException</span> <span class="o">{</span>
-        <span class="n">OutputStream</span> <span class="n">stream</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">OutputStream</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
-        <span class="n">doThrow</span><span class="o">(</span><span class="k">new</span> <span class="nf">IOException</span><span class="o">()).</span><span class="na">when</span><span class="o">(</span><span class="n">stream</span><span class="o">).</span><span class="na">close</span><span class="o">();</span> <span class="c1">//when close() method is called throw exception</span>
-        <span class="n">stream</span><span class="o">.</span><span class="na">close</span><span class="o">();</span>
-    <span class="o">}</span>
-<span class="o">}</span>
-</pre></div>

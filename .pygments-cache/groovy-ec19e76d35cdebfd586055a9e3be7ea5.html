@@ -1,9 +1,0 @@
-<div class="highlight"><pre> <span class="nd">@Singleton</span><span class="o">(</span><span class="n">lazy</span> <span class="o">=</span> <span class="kc">true</span><span class="o">)</span>
- <span class="kd">class</span> <span class="nc">TheUnique</span> <span class="o">{</span>
-  <span class="kd">private</span> <span class="nf">TheUnique</span><span class="o">()</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;Instance created&#39;</span> <span class="o">}</span>
- <span class="kt">def</span> <span class="nf">hello</span><span class="o">()</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;hello&#39;</span> <span class="o">}</span>
- <span class="o">}</span>
- <span class="n">TheUnique</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">hello</span><span class="o">()</span>
- <span class="n">TheUnique</span><span class="o">.</span><span class="na">instance</span><span class="o">.</span><span class="na">hello</span><span class="o">()</span>
- <span class="k">new</span> <span class="nf">TheUnique</span><span class="o">().</span><span class="na">hello</span><span class="o">()</span> <span class="c1">//Caveat: since Groovy does not honor private methods, clients can still do this.</span>
-</pre></div>

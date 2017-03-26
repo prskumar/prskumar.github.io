@@ -1,9 +1,0 @@
-<div class="highlight"><pre><span class="nd">@Repository</span>
-<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyRepository</span> <span class="kd">implements</span> <span class="n">MyRepo</span> <span class="o">{</span>
-	<span class="kd">private</span> <span class="n">JdbcOperations</span> <span class="n">jdbcOperations</span><span class="o">;</span>
-	
-	<span class="nd">@Inject</span>
-	<span class="kd">public</span> <span class="nf">JdbcSpitterRepository</span><span class="o">(</span><span class="n">JdbcOperations</span> <span class="n">jdbcOperations</span><span class="o">)</span> <span class="o">{</span>
-		<span class="k">this</span><span class="o">.</span><span class="na">jdbcOperations</span> <span class="o">=</span> <span class="n">jdbcOperations</span><span class="o">;</span>
-	<span class="o">}</span>
-</pre></div>
