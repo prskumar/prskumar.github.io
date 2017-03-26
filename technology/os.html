@@ -5,11 +5,12 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Knowledge Shop </title>
+  <title>Operating Systems - KnowledgeShop</title>
   <meta name="author" content="Mohamed Fizal Ihsan Mohamed">
 
 
-<meta name="description" content="Knowledge Shop Technical Architecture Overview Cloud Computing Coding Principles Design Principles Lambda Architecture Logging &amp; Monitoring &hellip;">
+<meta name="description" content="Operating Systems UNIX Frequently used commands VI Tips Ubuntu UNIX Frequently used commands Find and copy files created today
+find /home/clstest - &hellip;">
 <meta name="keywords" content="big data, data science, mongodb, nosql, R, statistics">
 
   <!-- http://t.co/dKP3o1e -->
@@ -18,7 +19,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://fizalihsan.github.io">
+  <link rel="canonical" href="http://fizalihsan.github.io/technology/os.html">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <!-- Below custom CSS is for table border styling -->
@@ -103,129 +104,126 @@ messageStyle: "none",
 <article role="article">
   
   <header>
-    <h1 class="entry-title">Knowledge Shop</h1>
+    <h1 class="entry-title">Operating Systems</h1>
     
   </header>
   
-  <h2 id="technical">Technical</h2>
+  <ul id="markdown-toc">
+  <li><a href="#unix">UNIX</a>    <ul>
+      <li><a href="#frequently-used-commands">Frequently used commands</a></li>
+      <li><a href="#vi-tips">VI Tips</a></li>
+    </ul>
+  </li>
+  <li><a href="#ubuntu">Ubuntu</a></li>
+</ul>
+
+<h1 id="unix">UNIX</h1>
+
+<h2 id="frequently-used-commands">Frequently used commands</h2>
+
 <ul>
-  <li>Architecture
-    <ul>
-      <li><a href="/technology/architecture.html">Overview</a></li>
-      <li><a href="/technology/cloud-computing.html">Cloud Computing</a></li>
-      <li><a href="/technology/coding-principles.html">Coding Principles</a></li>
-      <li><a href="/technology/design-principles.html">Design Principles</a></li>
-      <li><a href="/technology/lambda-architecture.html">Lambda Architecture</a></li>
-      <li><a href="/technology/logging-and-monitoring.html">Logging &amp; Monitoring</a></li>
-      <li><a href="/technology/patterns.html">Patterns</a></li>
-      <li><a href="/technology/sdlc.html">SDLC</a></li>
-      <li><a href="/technology/scalability.html">Scalability</a></li>
-      <li><a href="/technology/security.html">Security</a></li>
-      <li><a href="/technology/transaction.html">Transactions</a></li>
-    </ul>
+  <li>
+    <p>Find and copy files created today
+<code>find /home/clstest -ctime -1 -exec cp {} /home/mohammo/CSW \;</code></p>
   </li>
-  <li>BigData
-    <ul>
-      <li><a href="/technology/bigdata.html">Concepts</a></li>
-      <li><a href="/technology/distributedcomputing.html">Distributed Computing</a></li>
-      <li><a href="/technology/elasticsearch.html">ElasticSearch</a></li>
-      <li><a href="/technology/bigdata-frameworks.html">Frameworks</a></li>
-      <li><a href="/technology/hadoop-ecosystem.html">Hadoop Ecosystem</a></li>
-      <li><a href="/technology/nosql.html">NoSQL</a></li>
-      <li><a href="/technology/concurrency-parallelism.html">Parallel Computing</a></li>
-    </ul>
+  <li>
+    <p>Suppress error message from ‘find’ command
+<code>find . -name "*" -print 2&gt;/dev/null</code></p>
   </li>
-  <li>Database
-    <ul>
-      <li><a href="/technology/rdbms.html">Concepts</a></li>
-      <li><a href="/technology/db-design.html">Design</a></li>
-      <li><a href="/technology/db-performance.html">Performance</a></li>
-      <li><a href="/technology/sql.html">SQL</a></li>
-    </ul>
-  </li>
-  <li>Functional Programming
-    <ul>
-      <li><a href="/technology/functionalprogramming.html">Concepts</a></li>
-      <li><a href="/technology/groovy.html">Groovy</a></li>
-      <li><a href="/technology/scala.html">Scala</a></li>
-    </ul>
-  </li>
-  <li>Java
-    <ul>
-      <li><a href="/technology/java.html">Core Concepts</a></li>
-      <li><a href="/technology/java-collections.html">Collections</a></li>
-      <li><a href="/technology/java-concurrency.html">Concurrency</a></li>
-      <li><a href="/technology/java-database.html">Database</a></li>
-      <li><a href="/technology/java-io.html">I/O</a></li>
-      <li><a href="/technology/java-jmx.html">JMX</a></li>
-      <li><a href="/technology/java-jndi.html">JNDI</a></li>
-      <li><a href="/technology/java-performance.html">Performance</a></li>
-      <li><a href="/technology/java-testing.html">Testing</a></li>
-      <li><a href="/technology/java-web.html">Web</a></li>
-      <li><a href="/technology/java-newsletters.html">Java Specialist Newsletters</a></li>
-    </ul>
-  </li>
-  <li>SOA
-    <ul>
-      <li><a href="/technology/soa.html">Concepts</a></li>
-      <li><a href="/technology/camel.html">Camel</a></li>
-      <li><a href="/technology/messaging.html">Messaging</a></li>
-      <li><a href="/technology/rest-services.html">REST</a></li>
-      <li><a href="/technology/soap-services.html">SOAP</a></li>
-      <li><a href="/technology/webservices.html">Web Services</a></li>
-      <li><a href="/technology/xml.html">XML</a></li>
-    </ul>
-  </li>
-  <li>Spring
-    <ul>
-      <li><a href="/technology/spring-batch.html">Batch</a></li>
-      <li><a href="/technology/spring.html">Core</a></li>
-      <li><a href="/technology/spring-mvc.html">MVC</a></li>
-    </ul>
-  </li>
-  <li>Web Programming
-    <ul>
-      <li><a href="/technology/webconcepts.html">Concepts</a></li>
-      <li><a href="/technology/js-ecosystem.html">JS Ecosystem</a></li>
-    </ul>
-  </li>
-  <li>General Concepts
-    <ul>
-      <li><a href="/technology/algorithms.html">Algorithms</a></li>
-      <li><a href="/softskills/brain-teasers.html">Brain Teasers</a></li>
-      <li><a href="/technology/datastructures.html">Data Structures</a></li>
-      <li><a href="/technology/design-faqs.html">Design FAQs</a></li>
-      <li><a href="/technology/oops.html">OOPS</a></li>
-      <li><a href="/technology/os.html">Operating Systems</a></li>
-      <li><a href="/technology/vcs.html">VCS</a></li>
-      <li><a href="/technology/coding_bibliography.html">Coding Bibliography</a></li>
-    </ul>
+  <li>
+    <p>Tar &amp; untar directories with permissions intact</p>
   </li>
 </ul>
 
-<h2 id="non-techninal">Non-Techninal</h2>
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">tar -cvpf test.tar /home/mohammo/test
+</span><span class="line">tar -xvpf test.tar /home/mohammo/test</span></code></pre></td></tr></table></div></figure></notextile></div>
+
 <ul>
-  <li>Data Science
+  <li>Exclude certain files in ‘find’ command</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+</pre></td><td class="code"><pre><code class=""><span class="line">find . -name "*" -not -name "*.jar" -print
+</span><span class="line">find . -name "*" -not \( -name "*.jar" -o -name "*.tar" \) -print</span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>Search and replace with no hassle of escaping characters</li>
+</ul>
+
+<p><code>echo "/home/mohammo" | sed -e "s#/home/mohammo#/home/test#/g"</code></p>
+
+<ul>
+  <li>Search for text but only display their file names</li>
+</ul>
+
+<p><code>find . -name "*" -type f -exec grep -l "searchtext" {} \; -print</code></p>
+
+<ul>
+  <li>Set operations - Complement (A-B)- below command prints all entries in file1 that are not in file2</li>
+</ul>
+
+<p><code>comm -23 file1 file2</code></p>
+
+<ul>
+  <li>Sorting files</li>
+</ul>
+
+<div class="bogus-wrapper"><notextile><figure class="code"><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+</pre></td><td class="code"><pre><code class=""><span class="line"> sort file1 file2 | uniq  //Union of unsorted files 
+</span><span class="line"> sort file1 file2 | uniq -d  //Intersection of unsorted files 
+</span><span class="line"> sort file1 file1 file2 | uniq -u //Difference of unsorted files 
+</span><span class="line"> sort file1 file2 | uniq -u  //Symmetric Difference of unsorted files </span></code></pre></td></tr></table></div></figure></notextile></div>
+
+<ul>
+  <li>When a JVM process is running in Unix/Windows, how do I check how much memory is being currently used by that JVM?</li>
+</ul>
+
+<h2 id="vi-tips">VI Tips</h2>
+
+<blockquote>
+  <p>Note: Anything between [ and ] denotes a command executed from within vi.</p>
+</blockquote>
+
+<ul>
+  <li><code>[ !wc % ]</code> - opens a command shell and runs ‘wc’ on the current file open in vi. <code>%</code> means current file &amp; <code>!</code> is called ‘Bang’. Bang works best with non-interactive commands</li>
+  <li><code>[ qa ]</code> close all files open</li>
+  <li><code>[ ga ]</code> Show character info </li>
+  <li><code>[ ls ]</code> List buffers</li>
+  <li><code>[ % ]</code> Bracket matching</li>
+</ul>
+
+<h1 id="ubuntu">Ubuntu</h1>
+
+<p>​## Tips &amp; Tricks</p>
+
+<ul>
+  <li>How to create application shortcuts​ on desktop​
     <ul>
-      <li><a href="/datascience/datascience.html">Overview</a></li>
-      <li><a href="/datascience/statistics.html">Statistics</a></li>
-      <li><a href="/datascience/r.html">R</a></li>
+      <li>Install required packages: <code>sudo apt-get install --no-install-recommends gnome-panel</code></li>
+      <li>For each shortcut run this command:  <code>gnome-desktop-item-edit --create-new ~/Desktop</code></li>
     </ul>
   </li>
-  <li>Domain Knowledge
+  <li>How to list all installed packages: <code>dpkg --list | grep -i 'pkgname'</code></li>
+  <li>How to uninstall a package: <code>sudo apt-get --purge remove pkgname</code> OR install a GUI called <em>Synaptic</em>: <code>sudo apt-get install synaptic</code></li>
+  <li>Windows Task Manager equivalent: <em>System Monitor</em>  OR <code>top</code></li>
+  <li>How to get the current OS version details: <code>lsb_release -a</code></li>
+  <li>How to search for previously entered commands in command line:  <code>ctrl+r</code></li>
+  <li>Share folders between Windows host and Ubuntu guest
     <ul>
-      <li><a href="/domain/retirement.html">Retirement</a></li>
-    </ul>
-  </li>
-  <li>Soft Skills
-    <ul>
-      <li><a href="/softskills/presentation.html">Presentation</a></li>
-      <li><a href="/softskills/productivity.html">Productivity</a></li>
-      <li><a href="/softskills/written.html">Written Communication</a></li>
+      <li>Install <strong>VMware tools</strong> via VMWare menu </li>
+      <li>Add folders to share : <code>Virutal Machine -&gt; Settings -&gt; Options -&gt; Shared Folders -&gt; select 'Always Enabled' -&gt; Add folder in host to share</code></li>
+      <li>Install <strong>open-vmware-tools</strong> in Ubuntu:  <code>sudo apt-get install open-vm-tools</code></li>
+      <li>Mount shared folder from host onto guest:  <code>sudo mount -t vmhgfs .host:/ /mnt/hgfs/</code></li>
+      <li>After the previous step, shared folder from windows should be seen under <code>/mnt/hgfs</code></li>
     </ul>
   </li>
 </ul>
-
 
   
     <footer>
