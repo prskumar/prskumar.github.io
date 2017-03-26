@@ -1,0 +1,25 @@
+<div class="highlight"><pre><span class="kd">class</span> <span class="nc">Taxi</span> <span class="o">{</span>
+ <span class="kd">private</span> <span class="n">Dispatcher</span> <span class="n">dispatcher</span><span class="o">;</span>
+ <span class="kd">public</span> <span class="nf">Taxi</span><span class="o">(</span><span class="n">Dispatcher</span> <span class="n">dispatcher</span><span class="o">){</span><span class="k">this</span><span class="o">.</span><span class="na">dispatcher</span> <span class="o">=</span> <span class="n">dispatcher</span><span class="o">;}</span>
+ 
+ <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">setLocation</span><span class="o">(){</span>
+    <span class="n">dispatcher</span><span class="o">.</span><span class="na">notify</span><span class="o">();</span>
+ <span class="o">}</span>
+ 
+ <span class="kd">public</span> <span class="kd">synchronized</span> <span class="n">Object</span> <span class="nf">getLocation</span><span class="o">(){</span>
+ <span class="o">...</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+ 
+<span class="kd">class</span> <span class="nc">Dispatcher</span><span class="o">{</span>
+ <span class="kd">private</span> <span class="n">Set</span><span class="o">&lt;</span><span class="n">Taxi</span><span class="o">&gt;</span> <span class="n">taxis</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;&gt;();</span>
+ 
+ <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">getStatus</span><span class="o">(</span><span class="n">Taxi</span> <span class="n">taxi</span><span class="o">){</span>
+    <span class="n">taxi</span><span class="o">.</span><span class="na">getLocation</span><span class="o">();</span>
+ <span class="o">}</span>
+ 
+ <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">notify</span><span class="o">(){</span>
+ <span class="o">...</span>
+ <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

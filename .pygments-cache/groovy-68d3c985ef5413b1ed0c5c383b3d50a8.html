@@ -1,0 +1,11 @@
+<div class="highlight"><pre><span class="kd">class</span> <span class="nc">Name</span><span class="o">{</span>
+  <span class="kt">def</span> <span class="n">name</span><span class="o">;</span> 
+  <span class="kt">def</span> <span class="nf">plus</span><span class="o">(</span><span class="n">other</span><span class="o">){</span>
+    <span class="k">new</span> <span class="nf">Name</span><span class="o">(</span><span class="nl">name:</span> <span class="n">name</span> <span class="o">+</span> <span class="s2">&quot;~~&quot;</span> <span class="o">+</span> <span class="n">other</span><span class="o">.</span><span class="na">name</span><span class="o">)</span>
+  <span class="o">}</span>
+  <span class="n">String</span> <span class="nf">toString</span><span class="o">()</span> <span class="o">{</span> <span class="s2">&quot;name: &quot;</span> <span class="o">+</span> <span class="n">name</span><span class="o">}</span>
+<span class="o">}</span>
+<span class="kt">def</span> <span class="n">name1</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Name</span><span class="o">(</span><span class="nl">name:</span> <span class="s2">&quot;Hello&quot;</span><span class="o">)</span>
+<span class="kt">def</span> <span class="n">name2</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Name</span><span class="o">(</span><span class="nl">name:</span> <span class="s2">&quot;World&quot;</span><span class="o">)</span>
+<span class="n">println</span> <span class="n">name1</span> <span class="o">+</span> <span class="n">name2</span>
+</pre></div>

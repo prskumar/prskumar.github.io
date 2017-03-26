@@ -1,0 +1,25 @@
+<div class="highlight"><pre><span class="c1"># automatically installs httpd package</span>
+<span class="n">package</span> <span class="s1">&#39;httpd&#39;</span>
+
+<span class="c1"># enable and start the service</span>
+<span class="n">service</span> <span class="s1">&#39;httpd&#39;</span> <span class="k">do</span>
+    <span class="n">action</span> <span class="o">[</span><span class="ss">:enable</span><span class="p">,</span> <span class="ss">:start</span><span class="o">]</span>
+<span class="k">end</span>
+
+<span class="c1"># configure homepage</span>
+<span class="n">file</span> <span class="s1">&#39;/var/www/html/index.html&#39;</span> <span class="k">do</span>
+  <span class="n">content</span> <span class="s1">&#39;&lt;html&gt;</span>
+<span class="s1">  &lt;body&gt;</span>
+<span class="s1">    &lt;h1&gt;hello world&lt;/h1&gt;</span>
+<span class="s1">  &lt;/body&gt;</span>
+<span class="s1">&lt;/html&gt;&#39;</span>
+<span class="k">end</span>
+
+<span class="c1"># creates a tmp file and sets permissions</span>
+<span class="n">file</span> <span class="s1">&#39;/etc/motd&#39;</span> <span class="k">do</span>
+  <span class="n">owner</span> <span class="s1">&#39;root&#39;</span>
+  <span class="n">group</span> <span class="s1">&#39;root&#39;</span>
+  <span class="n">mode</span> <span class="s1">&#39;0755&#39;</span>
+  <span class="n">action</span> <span class="ss">:create</span>
+<span class="k">end</span>
+</pre></div>

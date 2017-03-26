@@ -1,0 +1,22 @@
+<div class="highlight"><pre><span class="kn">import</span> <span class="nn">groovy.transform.*</span>
+<span class="kd">class</span> <span class="nc">Worker</span> <span class="o">{</span>
+ <span class="kt">def</span> <span class="nf">work</span><span class="o">()</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;get work done&#39;</span> <span class="o">}</span>
+ <span class="kt">def</span> <span class="nf">analyze</span><span class="o">()</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;analyze...&#39;</span> <span class="o">}</span>
+ <span class="kt">def</span> <span class="nf">writeReport</span><span class="o">()</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;get report written&#39;</span> <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Expert</span> <span class="o">{</span>
+ <span class="kt">def</span> <span class="nf">analyze</span><span class="o">()</span> <span class="o">{</span> <span class="n">println</span> <span class="s2">&quot;expert analysis...&quot;</span> <span class="o">}</span>
+<span class="o">}</span>
+<span class="kd">class</span> <span class="nc">Manager</span> <span class="o">{</span>
+ <span class="c1">//At compile time, Groovy examines the Manager class and brings </span>
+ <span class="c1">// in methods from the delegated classes only if those methods </span>
+ <span class="c1">// don’t already exist</span>
+ <span class="nd">@Delegate</span> <span class="n">Expert</span> <span class="n">expert</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Expert</span><span class="o">()</span> 
+ <span class="c1">//only work() and writeReport() methods are brought here</span>
+ <span class="nd">@Delegate</span> <span class="n">Worker</span> <span class="n">worker</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Worker</span><span class="o">()</span>
+<span class="o">}</span>
+<span class="kt">def</span> <span class="n">bernie</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Manager</span><span class="o">()</span>
+<span class="n">bernie</span><span class="o">.</span><span class="na">analyze</span><span class="o">()</span>      <span class="c1">//invokes Expert.analyze()</span>
+<span class="n">bernie</span><span class="o">.</span><span class="na">work</span><span class="o">()</span>         <span class="c1">//invokes Worker.work()</span>
+<span class="n">bernie</span><span class="o">.</span><span class="na">writeReport</span><span class="o">()</span>  <span class="c1">//invokes Worker.writeReport</span>
+</pre></div>

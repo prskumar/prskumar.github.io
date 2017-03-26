@@ -1,0 +1,8 @@
+<div class="highlight"><pre><span class="k">DECLARE</span>   
+  <span class="k">CURSOR</span> <span class="n">cur</span> <span class="k">IS</span> <span class="k">SELECT</span> <span class="n">col</span> <span class="k">FROM</span> <span class="k">table</span> <span class="k">WHERE</span> <span class="n">something</span><span class="p">;</span> 
+<span class="k">BEGIN</span>
+  <span class="k">OPEN</span> <span class="n">cur</span><span class="p">;</span>
+  <span class="k">FETCH</span> <span class="n">cur</span> <span class="k">INTO</span> <span class="n">var</span><span class="p">;</span>
+  <span class="k">CLOSE</span> <span class="n">cur</span><span class="p">;</span>
+<span class="k">END</span><span class="p">;</span>
+</pre></div>

@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="nd">@Test</span> <span class="kd">public</span> <span class="kt">void</span> <span class="nf">stubbing</span><span class="o">()</span> <span class="o">{</span>
+        <span class="c1">//Arrange - Act - Assert Pattern</span>
+        <span class="n">Iterator</span> <span class="n">i</span> <span class="o">=</span> <span class="n">mock</span><span class="o">(</span><span class="n">Iterator</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+        <span class="c1">//when next() method is called, return &quot;Hello&quot; first and on 2nd invocation return &quot;World&quot;</span>
+        <span class="n">when</span><span class="o">(</span><span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">()).</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&quot;Hello&quot;</span><span class="o">).</span><span class="na">thenReturn</span><span class="o">(</span><span class="s">&quot;World&quot;</span><span class="o">);</span> <span class="c1">//Arrange</span>
+        <span class="n">String</span> <span class="n">result</span> <span class="o">=</span> <span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">()</span> <span class="o">+</span> <span class="s">&quot; &quot;</span> <span class="o">+</span> <span class="n">i</span><span class="o">.</span><span class="na">next</span><span class="o">();</span> <span class="c1">//Act</span>
+        <span class="n">assertThat</span><span class="o">(</span><span class="s">&quot;Hello World&quot;</span><span class="o">,</span> <span class="n">is</span><span class="o">(</span><span class="n">result</span><span class="o">));</span> <span class="c1">//Assert</span>
+    <span class="o">}</span>
+</pre></div>

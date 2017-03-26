@@ -1,0 +1,4 @@
+<div class="highlight"><pre><span class="k">select</span> <span class="o">*</span> <span class="k">from</span> <span class="n">pubs</span> <span class="k">where</span> <span class="p">....</span>
+<span class="n">if</span> <span class="o">@@</span><span class="n">rowcount</span> <span class="o">=</span> <span class="mi">0</span> <span class="cm">/* set to 1 after this */</span>
+<span class="n">print</span> <span class="ss">&quot;no rows returned&quot;</span>
+</pre></div>

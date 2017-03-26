@@ -1,0 +1,19 @@
+<div class="highlight"><pre><span class="p">{</span>
+	<span class="s2">&quot;Version&quot;</span><span class="o">:</span> <span class="s2">&quot;2012–10–17&quot;</span><span class="p">,</span>
+	<span class="s2">&quot;Statement&quot;</span><span class="o">:</span> <span class="p">[</span>
+		<span class="p">{</span>
+			<span class="s2">&quot;Sid&quot;</span><span class="o">:</span> <span class="s2">&quot;Stmt1441716043000&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Effect&quot;</span><span class="o">:</span> <span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
+			<span class="s2">&quot;Action&quot;</span><span class="o">:</span> <span class="p">[</span> <span class="s2">&quot;s3:GetObject&quot;</span><span class="p">,</span> <span class="s2">&quot;s3:ListBucket&quot;</span><span class="p">],</span>
+			<span class="s2">&quot;Condition&quot;</span><span class="o">:</span> <span class="p">{</span>
+				<span class="s2">&quot;IpAddress&quot;</span><span class="o">:</span> <span class="p">{</span>
+					<span class="s2">&quot;aws:SourceIp&quot;</span><span class="o">:</span> <span class="s2">&quot;192.168.0.1&quot;</span>
+				<span class="p">}</span>
+			<span class="p">},</span>
+			<span class="s2">&quot;Resource&quot;</span><span class="o">:</span> <span class="p">[</span>
+				<span class="s2">&quot;arn:aws:s3:::my_public_bucket/*&quot;</span>
+			<span class="p">]</span>
+		<span class="p">}</span>
+	<span class="p">]</span>
+<span class="p">}</span>
+</pre></div>

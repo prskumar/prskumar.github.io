@@ -1,0 +1,11 @@
+<div class="highlight"><pre><span class="n">UserTransaction</span> <span class="n">txn</span> <span class="o">=</span> <span class="n">sessionCtx</span><span class="o">.</span><span class="na">getUserTransaction</span><span class="o">();</span>
+<span class="n">txn</span><span class="o">.</span><span class="na">begin</span><span class="o">();</span>
+<span class="k">try</span><span class="o">{</span>
+    <span class="n">myDAO</span><span class="o">.</span><span class="na">updateOne</span><span class="o">(...);</span>
+    <span class="n">myDAO</span><span class="o">.</span><span class="na">updateTwo</span><span class="o">(...);</span>
+    <span class="n">txn</span><span class="o">.</span><span class="na">commit</span><span class="o">();</span>
+<span class="o">}</span> <span class="k">catch</span><span class="o">(...){</span>
+    <span class="n">txn</span><span class="o">.</span><span class="na">rollback</span><span class="o">();</span>
+    <span class="k">throw</span> <span class="n">e</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>

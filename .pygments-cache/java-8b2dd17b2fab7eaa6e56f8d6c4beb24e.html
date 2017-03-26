@@ -1,0 +1,11 @@
+<div class="highlight"><pre><span class="n">def</span> <span class="n">product</span> <span class="o">=</span> <span class="o">{</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span> <span class="o">-&gt;</span> 
+	<span class="n">println</span> <span class="s">&quot;x = $x, y = $y&quot;</span>
+	<span class="n">x</span> <span class="o">*</span> <span class="n">y</span> 
+<span class="o">}</span>
+
+<span class="n">def</span> <span class="n">quadrate</span> <span class="o">=</span> <span class="n">product</span><span class="o">.</span><span class="na">curry</span><span class="o">(</span><span class="mi">4</span><span class="o">)</span>
+<span class="n">println</span> <span class="n">quadrate</span><span class="o">.</span><span class="na">call</span><span class="o">(</span><span class="mi">2</span><span class="o">)</span> 
+
+<span class="c1">//x = 4, y = 2</span>
+<span class="c1">//8</span>
+</pre></div>

@@ -1,0 +1,15 @@
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">EventListener2</span> <span class="o">{</span>
+  <span class="kd">public</span> <span class="nf">EventListener2</span><span class="o">(</span><span class="n">EventSource</span> <span class="n">eventSource</span><span class="o">)</span> <span class="o">{</span>
+
+    <span class="n">eventSource</span><span class="o">.</span><span class="na">registerListener</span><span class="o">(</span>
+      <span class="k">new</span> <span class="nf">EventListener</span><span class="o">()</span> <span class="o">{</span> <span class="c1">//indirectly this non-static anonymous class publishes a reference to an instance of parent EventListener2</span>
+        <span class="kd">public</span> <span class="kt">void</span> <span class="nf">onEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span> 
+          <span class="n">eventReceived</span><span class="o">(</span><span class="n">e</span><span class="o">);</span>
+        <span class="o">}</span>
+      <span class="o">});</span>
+  <span class="o">}</span>
+
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">eventReceived</span><span class="o">(</span><span class="n">Event</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

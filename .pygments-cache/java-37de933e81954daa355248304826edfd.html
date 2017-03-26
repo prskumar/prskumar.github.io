@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="nd">@Controller</span>
+ <span class="kd">public</span> <span class="kd">class</span> <span class="nc">ItemController</span> <span class="o">{</span>
+
+     <span class="nd">@RequestMapping</span><span class="o">(</span><span class="n">value</span><span class="o">=</span><span class="s">&quot;viewItem.htm&quot;</span><span class="o">,</span> <span class="n">method</span><span class="o">=</span><span class="n">RequestMethod</span><span class="o">.</span><span class="na">GET</span><span class="o">)</span>
+     <span class="kd">public</span> <span class="n">Item</span> <span class="nf">viewItem</span><span class="o">(</span><span class="nd">@RequestParam</span> <span class="n">Long</span> <span class="n">id</span><span class="o">){</span>
+         <span class="k">return</span> <span class="n">itemservice</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">id</span><span class="o">);</span>
+     <span class="o">}</span>   
+<span class="o">}</span>
+</pre></div>

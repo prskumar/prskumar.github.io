@@ -1,0 +1,65 @@
+<div class="highlight"><pre><span class="kd">public</span> <span class="kd">class</span> <span class="nc">WordReader</span> <span class="kd">implements</span> <span class="n">IRichSpout</span> <span class="o">{</span>
+	<span class="kd">private</span> <span class="n">SpoutOutputCollector</span> <span class="n">collector</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">FileReader</span> <span class="n">fileReader</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="kt">boolean</span> <span class="n">completed</span> <span class="o">=</span> <span class="kc">false</span><span class="o">;</span>
+	<span class="kd">private</span> <span class="n">TopologyContext</span> <span class="n">context</span><span class="o">;</span>
+
+	<span class="c1">// We will create the file and get the collector object</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">open</span><span class="o">(</span>
+			<span class="n">Map</span> <span class="n">conf</span><span class="o">,</span> <span class="c1">// conf object created during topology definition</span>
+			<span class="n">TopologyContext</span> <span class="n">context</span><span class="o">,</span> <span class="c1">// contains topology data</span>
+			<span class="n">SpoutOutputCollector</span> <span class="n">collector</span> <span class="c1">//enables to emit the data for bolts to process</span>
+		<span class="o">)</span> <span class="o">{</span>
+		<span class="k">try</span> <span class="o">{</span>
+			<span class="k">this</span><span class="o">.</span><span class="na">context</span> <span class="o">=</span> <span class="n">context</span><span class="o">;</span>
+			<span class="k">this</span><span class="o">.</span><span class="na">fileReader</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">FileReader</span><span class="o">(</span><span class="n">conf</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;wordsFile&quot;</span><span class="o">).</span><span class="na">toString</span><span class="o">());</span>
+		<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">FileNotFoundException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">&quot;Error reading file	[&quot;</span><span class="o">+</span><span class="n">conf</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&quot;wordFile&quot;</span><span class="o">)+</span><span class="s">&quot;]&quot;</span><span class="o">);</span>
+		<span class="o">}</span>
+		<span class="k">this</span><span class="o">.</span><span class="na">collector</span> <span class="o">=</span> <span class="n">collector</span><span class="o">;</span>
+	<span class="o">}</span>
+
+	<span class="c1">// this method emits a tuple for each line in file</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">nextTuple</span><span class="o">()</span> <span class="o">{</span>
+		<span class="c1">// The nextuple it is called forever, so if we have already completed reading the file ,we will wait and then return</span>
+		<span class="k">if</span><span class="o">(</span><span class="n">completed</span><span class="o">){</span>
+			<span class="k">try</span> <span class="o">{</span>
+				<span class="n">Thread</span><span class="o">.</span><span class="na">sleep</span><span class="o">(</span><span class="mi">1000</span><span class="o">);</span>
+			<span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">InterruptedException</span> <span class="n">e</span><span class="o">)</span> <span class="o">{</span>
+				<span class="c1">//Do nothing</span>
+			<span class="o">}</span>
+			<span class="k">return</span><span class="o">;</span>
+		<span class="o">}</span>
+
+		<span class="c1">//Open the reader</span>
+		<span class="n">String</span> <span class="n">str</span><span class="o">;</span>
+		<span class="n">BufferedReader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">BufferedReader</span><span class="o">(</span><span class="n">fileReader</span><span class="o">);</span>
+		<span class="k">try</span><span class="o">{</span>
+			<span class="c1">//Read all lines</span>
+			<span class="k">while</span><span class="o">((</span><span class="n">str</span> <span class="o">=</span> <span class="n">reader</span><span class="o">.</span><span class="na">readLine</span><span class="o">())</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">){</span>
+				<span class="k">this</span><span class="o">.</span><span class="na">collector</span><span class="o">.</span><span class="na">emit</span><span class="o">(</span><span class="k">new</span> <span class="nf">Values</span><span class="o">(</span><span class="n">str</span><span class="o">),</span><span class="n">str</span><span class="o">);</span> <span class="c1">// emit each line from file</span>
+			<span class="o">}</span>
+		<span class="o">}</span><span class="k">catch</span><span class="o">(</span><span class="n">Exception</span> <span class="n">e</span><span class="o">){</span>
+			<span class="k">throw</span> <span class="k">new</span> <span class="nf">RuntimeException</span><span class="o">(</span><span class="s">&quot;Error reading tuple&quot;</span><span class="o">,</span><span class="n">e</span><span class="o">);</span>
+		<span class="o">}</span><span class="k">finally</span><span class="o">{</span>
+			<span class="n">completed</span> <span class="o">=</span> <span class="kc">true</span><span class="o">;</span>
+		<span class="o">}</span>
+	<span class="o">}</span>
+
+	<span class="c1">// declare the output field </span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">declareOutputFields</span><span class="o">(</span><span class="n">OutputFieldsDeclarer</span> <span class="n">declarer</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">declarer</span><span class="o">.</span><span class="na">declare</span><span class="o">(</span><span class="k">new</span> <span class="nf">Fields</span><span class="o">(</span><span class="s">&quot;line&quot;</span><span class="o">));</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">boolean</span> <span class="nf">isDistributed</span><span class="o">()</span> <span class="o">{</span><span class="k">return</span> <span class="kc">false</span><span class="o">;}</span>
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">close</span><span class="o">()</span> <span class="o">{}</span>
+	
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">ack</span><span class="o">(</span><span class="n">Object</span> <span class="n">msgId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;OK:&quot;</span><span class="o">+</span><span class="n">msgId</span><span class="o">);</span>
+	<span class="o">}</span>
+
+	<span class="kd">public</span> <span class="kt">void</span> <span class="nf">fail</span><span class="o">(</span><span class="n">Object</span> <span class="n">msgId</span><span class="o">)</span> <span class="o">{</span>
+		<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&quot;FAIL:&quot;</span><span class="o">+</span><span class="n">msgId</span><span class="o">);</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

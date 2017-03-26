@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="kd">class</span> <span class="nc">FooFormController</span> <span class="kd">extends</span> <span class="n">SimpleFormController</span><span class="o">{</span>
+    <span class="kt">void</span> <span class="nf">onSubmit</span><span class="o">(</span><span class="n">Object</span> <span class="n">obj</span><span class="o">){</span>
+        <span class="k">return</span> <span class="k">new</span> <span class="nf">ModelAndView</span><span class="o">(</span><span class="k">new</span> <span class="nf">RedirectView</span><span class="o">(</span><span class="n">getSuccessView</span><span class="o">())));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+
+<span class="kd">class</span> <span class="nc">FooValidator</span> <span class="kd">implements</span> <span class="n">Validator</span><span class="o">{</span>
+<span class="o">}</span>
+</pre></div>

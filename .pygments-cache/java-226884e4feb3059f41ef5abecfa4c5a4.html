@@ -1,0 +1,22 @@
+<div class="highlight"><pre><span class="kn">package</span> <span class="n">spittr</span><span class="o">.</span><span class="na">config</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SpittrWebAppInitializer</span> <span class="kd">extends</span> <span class="n">AbstractAnnotationConfigDispatcherServletInitializer</span> <span class="o">{</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">String</span><span class="o">[]</span> <span class="nf">getServletMappings</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">String</span><span class="o">[]</span> <span class="o">{</span> <span class="s">&quot;/&quot;</span> <span class="o">};</span>
+	<span class="o">}</span>
+
+	<span class="c1">// Returns @Configuration beans to load into the DispatcherServletContext</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">Class</span><span class="o">&lt;?&gt;[]</span> <span class="n">getServletConfigClasses</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">Class</span><span class="o">&lt;?&gt;[]</span> <span class="o">{</span> <span class="n">WebConfig</span><span class="o">.</span><span class="na">class</span> <span class="o">};</span>
+	<span class="o">}</span>
+	
+	<span class="c1">// Returns @Configuration beans to load into the ContextLoaderListener</span>
+	<span class="nd">@Override</span>
+	<span class="kd">protected</span> <span class="n">Class</span><span class="o">&lt;?&gt;[]</span> <span class="n">getRootConfigClasses</span><span class="o">()</span> <span class="o">{</span>
+		<span class="k">return</span> <span class="k">new</span> <span class="n">Class</span><span class="o">&lt;?&gt;[]</span> <span class="o">{</span> <span class="n">RootConfig</span><span class="o">.</span><span class="na">class</span> <span class="o">};</span>
+	<span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

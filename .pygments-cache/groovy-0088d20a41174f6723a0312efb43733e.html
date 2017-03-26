@@ -1,0 +1,7 @@
+<div class="highlight"><pre><span class="n">task</span> <span class="n">task4</span>
+<span class="n">task4</span> <span class="o">&lt;&lt;</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;world&#39;</span><span class="o">}</span>
+<span class="n">task4</span><span class="o">.</span><span class="na">doFirst</span> <span class="o">{</span> <span class="n">print</span> <span class="s1">&#39;Hello, &#39;</span><span class="o">}</span>
+<span class="n">task4</span><span class="o">.</span><span class="na">doFirst</span> <span class="o">{</span> <span class="n">println</span> <span class="s1">&#39;Good morning&#39;</span><span class="o">}</span> <span class="c1">//repeated calls to doFirst() is additive</span>
+<span class="n">task4</span><span class="o">.</span><span class="na">doLast</span> <span class="o">{</span><span class="n">println</span> <span class="s1">&#39;Good bye&#39;</span><span class="o">}</span>
+<span class="n">task4</span><span class="o">.</span><span class="na">doLast</span> <span class="o">{</span><span class="n">println</span> <span class="s1">&#39;Shutting down&#39;</span><span class="o">}</span> <span class="c1">//repeated calls to doLast() is additive</span>
+</pre></div>

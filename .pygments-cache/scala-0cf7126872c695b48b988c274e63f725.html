@@ -1,0 +1,12 @@
+<div class="highlight"><pre><span class="k">import</span> <span class="nn">java.util.</span><span class="o">{</span><span class="nc">Date</span><span class="o">,</span> <span class="nc">Locale</span><span class="o">}</span>
+<span class="k">import</span> <span class="nn">java.text.DateFormat</span>
+<span class="k">import</span> <span class="nn">java.text.DateFormat._</span>
+ 
+<span class="k">object</span> <span class="nc">FrenchDate</span> <span class="o">{</span>
+  <span class="k">def</span> <span class="n">main</span><span class="o">(</span><span class="n">args</span><span class="k">:</span> <span class="kt">Array</span><span class="o">[</span><span class="kt">String</span><span class="o">])</span> <span class="o">{</span>
+    <span class="k">val</span> <span class="n">now</span> <span class="k">=</span> <span class="k">new</span> <span class="nc">Date</span>
+    <span class="k">val</span> <span class="n">df</span> <span class="k">=</span> <span class="n">getDateInstance</span><span class="o">(</span><span class="nc">LONG</span><span class="o">,</span> <span class="nc">Locale</span><span class="o">.</span><span class="nc">FRANCE</span><span class="o">)</span>
+    <span class="n">println</span><span class="o">(</span><span class="n">df</span> <span class="n">format</span> <span class="n">now</span><span class="o">)</span>
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

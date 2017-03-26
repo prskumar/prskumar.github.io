@@ -1,0 +1,19 @@
+<div class="highlight"><pre><span class="nd">@Path</span><span class="o">(</span><span class="s">&quot;/customers&quot;</span><span class="o">)</span>
+<span class="nd">@RolesAllowed</span><span class="o">({</span><span class="s">&quot;ADMIN&quot;</span><span class="o">,</span> <span class="s">&quot;CUSTOMER&quot;</span><span class="o">})</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">CustomerResource</span> <span class="o">{</span>
+  <span class="nd">@GET</span>
+  <span class="nd">@Path</span><span class="o">(</span><span class="s">&quot;{id}&quot;</span><span class="o">)</span>
+  <span class="nd">@Produces</span><span class="o">(</span><span class="s">&quot;application/xml&quot;</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="n">Customer</span> <span class="nf">getCustomer</span><span class="o">(</span><span class="nd">@PathParam</span><span class="o">(</span><span class="s">&quot;id&quot;</span><span class="o">)</span> <span class="kt">int</span> <span class="n">id</span><span class="o">)</span> <span class="o">{...}</span>
+  
+  <span class="nd">@RolesAllowed</span><span class="o">(</span><span class="s">&quot;ADMIN&quot;</span><span class="o">)</span>
+  <span class="nd">@POST</span>
+  <span class="nd">@Consumes</span><span class="o">(</span><span class="s">&quot;application/xml&quot;</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">createCustomer</span><span class="o">(</span><span class="n">Customer</span> <span class="n">cust</span><span class="o">)</span> <span class="o">{...}</span>
+  
+  <span class="nd">@PermitAll</span>
+  <span class="nd">@GET</span>
+  <span class="nd">@Produces</span><span class="o">(</span><span class="s">&quot;application/xml&quot;</span><span class="o">)</span>
+  <span class="kd">public</span> <span class="n">Customer</span><span class="o">[]</span> <span class="nf">getCustomers</span><span class="o">()</span> <span class="o">{}</span>
+<span class="o">}</span>
+</pre></div>

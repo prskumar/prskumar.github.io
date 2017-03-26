@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="nd">@Bean</span>
+<span class="kd">public</span> <span class="n">ViewResolver</span> <span class="nf">viewResolver</span><span class="o">()</span> <span class="o">{</span>
+	<span class="n">InternalResourceViewResolver</span> <span class="n">resolver</span> <span class="o">=</span> <span class="k">new</span> <span class="nf">InternalResourceViewResolver</span><span class="o">();</span>
+	<span class="n">resolver</span><span class="o">.</span><span class="na">setPrefix</span><span class="o">(</span><span class="s">&quot;/WEB-INF/views/&quot;</span><span class="o">);</span>
+	<span class="n">resolver</span><span class="o">.</span><span class="na">setSuffix</span><span class="o">(</span><span class="s">&quot;.jsp&quot;</span><span class="o">);</span>
+	<span class="n">resolver</span><span class="o">.</span><span class="na">setExposeContextBeansAsAttributes</span><span class="o">(</span><span class="kc">true</span><span class="o">);</span>
+	<span class="k">return</span> <span class="n">resolver</span><span class="o">;</span>
+<span class="o">}</span>
+</pre></div>

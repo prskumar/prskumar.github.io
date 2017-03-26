@@ -1,0 +1,4 @@
+<div class="highlight"><pre><span class="k">SELECT</span> <span class="n">emp_name</span><span class="p">,</span> <span class="n">department_name</span><span class="p">,</span> <span class="n">city</span> <span class="k">FROM</span> <span class="n">employees</span> <span class="n">e</span> 
+<span class="k">JOIN</span> <span class="n">departments</span> <span class="n">d</span> <span class="k">USING</span> <span class="p">(</span><span class="n">department_id</span><span class="p">)</span> 
+<span class="k">JOIN</span> <span class="n">locations</span> <span class="n">l</span> <span class="k">USING</span> <span class="p">(</span><span class="n">location_id</span><span class="p">)</span> <span class="k">WHERE</span> <span class="n">salary</span> <span class="o">&gt;</span> <span class="mi">10000</span><span class="p">;</span>
+</pre></div>

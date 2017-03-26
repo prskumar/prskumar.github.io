@@ -1,0 +1,12 @@
+<div class="highlight"><pre><span class="kd">interface</span> <span class="nc">Greeting</span> <span class="o">{</span> <span class="kt">void</span> <span class="n">greet</span><span class="o">(</span><span class="n">greeting</span><span class="o">)</span> <span class="o">}</span>
+<span class="kd">interface</span> <span class="nc">WellWisher</span> <span class="o">{</span> <span class="kt">void</span> <span class="n">wish</span><span class="o">(</span><span class="n">wish</span><span class="o">)</span> <span class="o">}</span>
+<span class="kt">void</span> <span class="nf">greeter</span><span class="o">(</span><span class="n">Greeting</span> <span class="n">greeting</span><span class="o">){</span> <span class="n">greeting</span><span class="o">.</span><span class="na">greet</span><span class="o">()}</span>
+<span class="kt">void</span> <span class="nf">wellwisher</span><span class="o">(</span><span class="n">WellWisher</span> <span class="n">wellwisher</span><span class="o">){</span> <span class="n">wellwisher</span><span class="o">.</span><span class="na">wish</span><span class="o">()}</span>
+
+<span class="n">greeter</span><span class="o">(</span><span class="k">new</span> <span class="n">Greeting</span><span class="o">(){</span> <span class="kt">void</span> <span class="n">greet</span><span class="o">(</span><span class="n">greeting</span><span class="o">){</span><span class="n">println</span> <span class="s1">&#39;Java style&#39;</span><span class="o">}})</span> 
+<span class="n">groovyStyle</span> <span class="o">=</span> <span class="o">{</span><span class="n">println</span> <span class="s1">&#39;Groovy style&#39;</span><span class="o">}</span>
+<span class="n">greeter</span><span class="o">(</span><span class="n">groovyStyle</span> <span class="k">as</span> <span class="n">Greeting</span><span class="o">)</span> 
+<span class="c1">//block of code is morphed into an implementation of the</span>
+<span class="c1">// interface via &#39;as&#39; operator</span>
+<span class="n">wellwisher</span><span class="o">(</span><span class="n">groovyStyle</span> <span class="k">as</span> <span class="n">WellWisher</span><span class="o">)</span> 
+</pre></div>

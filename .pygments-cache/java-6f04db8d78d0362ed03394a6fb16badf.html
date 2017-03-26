@@ -1,0 +1,9 @@
+<div class="highlight"><pre><span class="nd">@Configuration</span>
+<span class="nd">@Profile</span><span class="o">(</span><span class="n">value</span> <span class="o">=</span> <span class="s">&quot;test&quot;</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">static</span> <span class="kd">class</span> <span class="nc">TestContextConfiguration</span> <span class="o">{</span>
+   <span class="nd">@Bean</span>
+   <span class="kd">public</span> <span class="n">TransactionRepository</span> <span class="nf">transactionRepository</span><span class="o">()</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="k">new</span> <span class="nf">StubTransactionRepository</span><span class="o">();</span>
+   <span class="o">}</span>
+<span class="o">}</span>
+</pre></div>

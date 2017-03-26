@@ -1,0 +1,9 @@
+<div class="highlight"><pre> <span class="kn">import</span> <span class="nn">groovy.transform.*</span>
+ <span class="nd">@Canonical</span><span class="o">(</span><span class="n">excludes</span><span class="o">=</span><span class="s2">&quot;age, password&quot;</span><span class="o">)</span>
+ <span class="kd">class</span> <span class="nc">Person</span> <span class="o">{</span>
+ <span class="n">String</span> <span class="n">firstName</span><span class="o">,</span> <span class="n">lastName</span><span class="o">,</span> <span class="n">password</span>
+ <span class="kt">int</span> <span class="n">age</span>
+ <span class="o">}</span>
+ <span class="kt">def</span> <span class="n">sara</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Person</span><span class="o">(</span><span class="nl">firstName:</span> <span class="s2">&quot;Sara&quot;</span><span class="o">,</span> <span class="nl">lastName:</span> <span class="s2">&quot;Walker&quot;</span><span class="o">,</span> <span class="nl">age:</span> <span class="mi">49</span><span class="o">,</span> <span class="nl">password:</span> <span class="s2">&quot;passw0rd&quot;</span><span class="o">)</span>
+ <span class="n">println</span> <span class="n">sara</span>
+</pre></div>

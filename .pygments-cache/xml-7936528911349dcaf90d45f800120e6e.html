@@ -1,0 +1,13 @@
+<div class="highlight"><pre><span class="nt">&lt;batch:job</span> <span class="na">id=</span><span class="s">&quot;importProductsJob&quot;</span><span class="nt">&gt;</span>
+	
+	<span class="nt">&lt;batch:step</span> <span class="na">id=</span><span class="s">&quot;readWriteStep&quot;</span><span class="nt">&gt;</span>
+		<span class="nt">&lt;batch:tasklet</span> <span class="na">transaction-manager=</span><span class="s">&quot;transactionManager&quot;</span><span class="nt">&gt;</span>
+			<span class="nt">&lt;batch:chunk</span>
+				<span class="na">reader=</span><span class="s">&quot;productItemReader&quot;</span>
+				<span class="na">processor=</span><span class="s">&quot;productItemProcessor&quot;</span>
+				<span class="na">writer=</span><span class="s">&quot;productItemWriter&quot;</span>
+				<span class="na">commit-interval=</span><span class="s">&quot;100&quot;</span><span class="nt">/&gt;</span>
+		<span class="nt">&lt;/batch:tasklet&gt;</span>
+	<span class="nt">&lt;/batch:step&gt;</span>
+<span class="nt">&lt;/batch:job&gt;</span>
+</pre></div>

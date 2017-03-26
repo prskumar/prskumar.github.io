@@ -1,0 +1,14 @@
+<div class="highlight"><pre> <span class="nt">&lt;servlet&gt;</span>
+ <span class="c">&lt;!-- end user nevers sees the 2 names below --&gt;</span>
+ <span class="nt">&lt;servlet-name&gt;</span>Internal Name<span class="nt">&lt;/servlet-name&gt;</span>
+ <span class="nt">&lt;servlet-class&gt;</span>com.mfi.Servlet1<span class="nt">&lt;/servlet-class&gt;</span>
+ <span class="c">&lt;!-- loads and initializes the servlet when the server starts. If multiple servlets are configured, they are loaded as per the number priority number provided --&gt;</span>
+ <span class="nt">&lt;load-on-startup&gt;</span>1<span class="nt">&lt;/load-on-startup&gt;</span>
+ <span class="nt">&lt;/servlet&gt;</span>
+
+ <span class="nt">&lt;servlet-mapping&gt;</span>
+ <span class="nt">&lt;servlet-name&gt;</span>Internal Name<span class="nt">&lt;/servlet-name&gt;</span>
+ <span class="c">&lt;!-- this is the name the client sees.--&gt;</span>
+ <span class="nt">&lt;url-pattern&gt;</span>/public1<span class="nt">&lt;/url-pattern&gt;</span>
+ <span class="nt">&lt;/servlet-mapping&gt;</span>
+</pre></div>
