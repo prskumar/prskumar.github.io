@@ -1,4 +1,4 @@
-i---
+---
 layout: page
 title: "Data Science"
 comments: true
